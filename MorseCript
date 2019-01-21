@@ -1,0 +1,29 @@
+morseDic = {' ':' ','a':'.-','b':'-...','c':'-.-.','d':'-..','e':'.','f':'..-.','g':'--.','h':'....','i':'..','j':'.---','k':'-.-','l':'.-..','m':'--','n':'-.','o':'---','p':'.--.','q':'--.-','r':'.-.','s':'...','t':'-','u':'..-','v':'...-','w':'.--','x':'-..-','y':'-.--','z':'--..'}
+letDic = {' ':' ','.-':'a','-...':'b','-.-.':'c','-..':'d','.':'e','..-.':'f','--.':'g','....':'h','..':'i','.---':'j','-.-':'k','.-..':'l','--':'m','-.':'n','---':'o','.--.':'p','--.-':'q','.-.':'r','...':'s','-':'t','..-':'u','...-':'v','.--':'w','-..-':'x','-.--':'y','--..':'z'}
+mensagem = 'Uma mensagem qualquer'
+msgCriptL = []
+msgCriptString = ''
+msgDeCriptL = []
+msgDeCriptString = ''
+mensagem = mensagem.lower()
+
+for alg in mensagem:
+    msgCriptL.append(morseDic[alg])
+
+for alg in msgCriptL:
+    msgDeCriptL.append(letDic[alg])
+
+i=0
+for alg in msgCriptL:    
+    if(msgCriptL[i]!= "'" or msgCriptL[i]!=',' or msgCriptL[i]!='[' or msgCriptL[i]!=']'):
+        msgCriptString = msgCriptString +msgCriptL[i]
+    i+=1
+    
+
+i=0    
+for alg in msgDeCriptL:    
+    if(msgDeCriptL[i]!= "'" or msgDeCriptL[i]!=',' or msgDeCriptL[i]!='[' or msgDeCriptL[i]!=']'):
+        msgDeCriptString = msgDeCriptString +msgDeCriptL[i]
+    i+=1
+print(msgCriptString)
+print(msgDeCriptString)
